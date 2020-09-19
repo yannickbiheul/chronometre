@@ -12,6 +12,7 @@ html, body {
     --red2: #e74c3c;
     --green1: #27ae60;
     --green2: #2ecc71;
+    --midnight: #2c3e50;
 }
 
 main {
@@ -24,10 +25,66 @@ main {
 }
 
 .containerChrono {
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     width: 95%;
     height: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 5px;
+}
+
+.case {
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.case>span {
+    width: 100%;
+    height: 100%;
+    background-color: var(--midnight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.boutons {
+    grid-column-start: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boutons>button {
+    margin: 0 20px 0 20px;
+    border: none;
+    padding: 10px;
+    box-shadow: 2px 2px 4px #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.start {
+    background-color: var(--green1);
+    color: #fff;
+}
+.stop {
+    background-color: var(--red1);
+    color: #fff;
+}
+
+
+@media screen and (max-width: 800px) {
+    .containerChrono {
+        height: 70%;
+    }
+
+    .boutons {
+        grid-column-start: 1;
+        grid-column-end: span 3;
+    }
 }
