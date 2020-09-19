@@ -21,7 +21,26 @@ function demarrerChrono() {
     } else {
         secondes.textContent = s + "s";
     }
-    
+    if (s === 60) {
+        s = 0;
+        secondes.textContent = "0" + s + "s";
+        m += 1;
+        if (m < 10) {
+            minutes.textContent = "0" + m + "m";
+        } else {
+            minutes.textContent = m + "m";
+        }
+    }
+    if (m === 60) {
+        m = 0;
+        minutes.textContent = "0" + m + "m";
+        h += 1;
+        if (h < 10) {
+            heures.textContent = "0" + h + "h";
+        } else {
+            heures.textContent = h + "h";
+        }
+    }
 }
 
 function lancerChrono() {
@@ -34,7 +53,7 @@ function arreterChrono() {
     m = 0;
     s = 0;
     heures.textContent = "00h";
-    minutes.txtContent = "00m";
+    minutes.textContent = "00m";
     secondes.textContent = "00s";
     start.addEventListener("click", lancerChrono);
 }
